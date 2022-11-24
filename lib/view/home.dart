@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/view/showcase.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -24,7 +25,10 @@ class _HomeState extends State<Home> {
               height: 50,
               width: 150,
               child: FloatingActionButton.extended(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder:
+                      (context) => Showcase()));
+                },
                 shape: new RoundedRectangleBorder(borderRadius:
                 new BorderRadius.circular(30.0)),
                 icon: Container(
