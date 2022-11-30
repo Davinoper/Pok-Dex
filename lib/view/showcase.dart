@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex/model/pokemon.dart';
+import 'package:pokedex/widget/pokemonCard.dart';
 
 class Showcase extends StatefulWidget {
   @override
@@ -7,6 +9,7 @@ class Showcase extends StatefulWidget {
 }
 
 class _ShowcaseState extends State<Showcase> {
+  Pokemon pokemon = new Pokemon(1, "Bubassauro", 10, 10, 10, 10, "Grama","https://pbs.twimg.com/media/FEXNb19XMAU4_xu.png",["frango","raios"]);
 
   @override
   Widget build(BuildContext context) {
@@ -18,17 +21,10 @@ class _ShowcaseState extends State<Showcase> {
       ),
       backgroundColor: Color.fromARGB(233, 233, 233, 141),
       body: ListView.separated(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(30),
         itemCount: 15,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: 100,
-            width: 10,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.black,width: 2)
-            ),
-          );
+          return PokemonCard(pokemon);
         },
         separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),
