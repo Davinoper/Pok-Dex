@@ -1,14 +1,14 @@
 class Pokemon{
-  int id;
+  var id;
   String nome;
-  double attack;
-  double speed;
-  double life;
-  double defense;
+  var attack;
+  var speed;
+  var life;
+  var defense;
   String element;
   String imageUrl;
 
-  Pokemon(int id, String nome, double attack, double speed, double life, double defense, String element, String imageUrl):
+  Pokemon(var id, String nome, var attack, var speed, var life, var defense, String element, String imageUrl):
     this.id =id,
     this.nome = nome,
     this.attack = attack,
