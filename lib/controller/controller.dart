@@ -1,7 +1,35 @@
-// import 'package:pokedex/api/api.dart' as api;
-// import 'package:pokedex/model/pokemon.dart';
-//
-// class Controller{
+import 'package:pokedex/api/api.dart' as api;
+import 'package:pokedex/model/pokemon.dart';
+
+void main(){
+  var a = api.fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
+  Future<Map> b;
+  List pokemons = [];
+
+  a.then((value) => {
+    for( var i = 0 ; i < value['results'].length; i++ ) {
+      // pokemons.add(api.fetch(value['results'][i]['url']).then((value) => null))
+      api.fetch(value['results'][i]['url']).then((value2) => {
+          pokemons.add(value2['name'])
+      })
+
+      // b = api.fetch(value['results'][i]['url']) ;
+      // b.then((value) => {
+      //   print(value.values);
+      // });
+    }
+
+  });
+
+  Controller.getPokemons();
+}
+class Controller{
+ static Future<dynamic> getPokemons() async {
+    var pokemons = await api.fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
+
+    return pokemons;
+  }
+}
 //
 //   const pokedex = document.getElementById('pokedex');
 // //fetching pokemon's name, image, type and id from pokeapi
