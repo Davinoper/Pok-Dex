@@ -91,14 +91,13 @@ class Pokemonstatus extends StatelessWidget {
                         PokemonAtributes('SPD',pokemon.speed.toString()),
                         PokemonAtributes('HP',pokemon.life.toString()),
                         PokemonAtributes('DEF',pokemon.defense.toString()),
-                        PokemonAtributes('ELE',pokemon.element),
+                        PokemonAtributes('ELE',pokemon.element.toUpperCase()),
                       ],
                     ),
                   )
                 ],
               ),
             ),
-            PokemonAtributes("Fraquezas:", pokemon.weakness.toString()),
           ],
 
         ),

@@ -69,7 +69,7 @@ class PokemonCard extends StatelessWidget{
             ),
            Column(
              children: [
-               PokemonAtributes("Elemento", pokemon.element),
+               PokemonAtributes("Elemento", pokemon.element.toUpperCase()),
                PokemonAtributes("Ataque", pokemon.attack.toString()),
 
              ],
