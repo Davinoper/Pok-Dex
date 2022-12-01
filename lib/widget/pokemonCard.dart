@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pokedex/model/pokemon.dart';
+import 'package:pokedex/view/PokemonInfo.dart';
+import 'package:pokedex/view/home.dart';
 import 'package:pokedex/widget/pokemonAtributes.dart';
 
 class PokemonCard extends StatelessWidget{
@@ -9,14 +11,18 @@ class PokemonCard extends StatelessWidget{
 
   PokemonCard(this.pokemon, {Key? key}) : super(key: key);
 
+  Pokemon handleOnTap(context){
+    Navigator.push(context, MaterialPageRoute(builder:
+        (context) => Pokemonstatus(this.pokemon)));
+    return this.pokemon;
+  }
+
   @override
   Widget build(BuildContext context) {
     final pokemonId = pokemon.id.toString();
     
     return GestureDetector(
-      onTap: () {
-          print("Clicou");
-      },
+      onTap: () => handleOnTap(context),
       child: Container(
         height: 350,
         width: 40,

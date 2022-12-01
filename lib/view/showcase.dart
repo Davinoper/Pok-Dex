@@ -9,10 +9,16 @@ class Showcase extends StatefulWidget {
 }
 
 class _ShowcaseState extends State<Showcase> {
-  Pokemon pokemon = new Pokemon(1, "Bubassauro", 10, 10, 10, 10, "Grama","https://pbs.twimg.com/media/FEXNb19XMAU4_xu.png",["frango","raios"]);
+  List<Pokemon> listaPokemons = [];
+  Pokemon pokemon = new Pokemon(1, "Bubassauro", 10, 10, 10, 10, "Grama","https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8885c1b1-0fce-494f-9212-f76281590038/dc9lrgr-f621155c-b9d1-47ac-8edd-368050bb7e67.png/v1/fill/w_773,h_554,strp/pokemon_bulbasaur_sprite_by_animcreepha_dc9lrgr-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTU0IiwicGF0aCI6IlwvZlwvODg4NWMxYjEtMGZjZS00OTRmLTkyMTItZjc2MjgxNTkwMDM4XC9kYzlscmdyLWY2MjExNTVjLWI5ZDEtNDdhYy04ZWRkLTM2ODA1MGJiN2U2Ny5wbmciLCJ3aWR0aCI6Ijw9NzczIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.sPsM260n8s1SiTPt6hJM8pOq3_hV6x75qTNFY9c6l6w",["frango","raios"]);
+  Pokemon pokemon2 = new Pokemon(2,"Charmander",12,12,12,12,"Fogo","https://i.imgur.com/So8jVZY.jpg",["Agua"]);
+
+
 
   @override
   Widget build(BuildContext context) {
+    listaPokemons.add(pokemon);
+    listaPokemons.add(pokemon2);
     return Scaffold(
       appBar: AppBar(
         title: Container(width:100,height:100,child: Image.asset('images/pokedex.png')),
@@ -22,9 +28,9 @@ class _ShowcaseState extends State<Showcase> {
       backgroundColor: Color.fromARGB(233, 233, 233, 141),
       body: ListView.separated(
         padding: const EdgeInsets.all(30),
-        itemCount: 15,
+        itemCount: listaPokemons.length,
         itemBuilder: (BuildContext context, int index) {
-          return PokemonCard(pokemon);
+          return PokemonCard(listaPokemons[index]);
         },
         separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),
