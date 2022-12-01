@@ -33,9 +33,18 @@ class Pokemonstatus extends StatelessWidget {
                  Row(
                   children: [
                     Container(
-                      width: 50,
-                      height: 50,
+                      width: 60,
+                      height: 60,
                       child: Image.asset('images/pokebolaBranca.png'),
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 10,
+                            offset: const Offset(0, 10),
+                          ),
+                        ],
+                      ),
                     ),
                     Text(
                       "${pokemon.nome.toUpperCase()}",
@@ -43,6 +52,12 @@ class Pokemonstatus extends StatelessWidget {
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
+                        shadows: [
+                          Shadow( // bottomLeft
+                              offset: Offset(1.0, 1.0),
+                              color: Colors.black38,
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -63,6 +78,8 @@ class Pokemonstatus extends StatelessWidget {
                   Container(
                     width: 300,
                     height: 300,
+                    padding: EdgeInsets.all(20.0),
+                    margin: EdgeInsets.all(20.0),
                     decoration: BoxDecoration(
                       color: Color.fromARGB(255, 177, 177, 177),
                       border: Border.all(color: Colors.white,width: 4),
