@@ -86,12 +86,13 @@ class Pokemonstatus extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        PokemonAtributes('ATK',pokemon.attack.toString()),
-                        PokemonAtributes('SPD',pokemon.speed.toString()),
-                        PokemonAtributes('HP',pokemon.life.toString()),
-                        PokemonAtributes('DEF',pokemon.defense.toString()),
-                        PokemonAtributes('ELE',pokemon.element.toUpperCase()),
+                        PokemonAtributes('ATK: ',pokemon.attack.toString(),Image.asset('images/ataque.png'),Colors.white),
+                        PokemonAtributes('SPD: ',pokemon.speed.toString(),Image.asset('images/velocidade.png'),Colors.white),
+                        PokemonAtributes('HP: ',pokemon.life.toString(),Image.asset('images/vida.png'),Colors.white),
+                        PokemonAtributes('DEF: ',pokemon.defense.toString(),Image.asset('images/defesa.png'),Colors.white),
+                        PokemonAtributes('ELE: ',pokemon.element.toUpperCase(),Image.asset('images/elemento.png'),Colors.white),
                       ],
                     ),
                   )

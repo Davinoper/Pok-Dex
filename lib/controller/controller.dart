@@ -22,7 +22,7 @@ class Controller {
 
   static Pokemon jsonToPokemon(json) {
     Pokemon pokemon = new Pokemon(
-        json['id'] ?? 0,
+        json['id']  ?? 0,
         json['name'] ?? " ",
         json['stats'][1]['base_stat'] ?? 0,
         json['stats'][5]['base_stat'] ?? 0,

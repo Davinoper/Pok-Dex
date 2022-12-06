@@ -68,6 +68,11 @@ flutter:
     - images/fontePoke.png
     - images/pokedex.png
     - images/pokebolaBranca.png
+    - images/ataque.png
+    - images/defesa.png
+    - images/elemento.png
+    - images/vida.png
+    - images/velocidade.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
