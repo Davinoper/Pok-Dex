@@ -33,9 +33,18 @@ class Pokemonstatus extends StatelessWidget {
                  Row(
                   children: [
                     Container(
-                      width: 50,
-                      height: 50,
+                      width: 60,
+                      height: 60,
                       child: Image.asset('images/pokebolaBranca.png'),
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 10,
+                            offset: const Offset(0, 10),
+                          ),
+                        ],
+                      ),
                     ),
                     Text(
                       "${pokemon.nome.toUpperCase()}",
@@ -43,6 +52,12 @@ class Pokemonstatus extends StatelessWidget {
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
+                        shadows: [
+                          Shadow( // bottomLeft
+                              offset: Offset(1.0, 1.0),
+                              color: Colors.black38,
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -63,25 +78,27 @@ class Pokemonstatus extends StatelessWidget {
                   Container(
                     width: 300,
                     height: 300,
+                    padding: EdgeInsets.all(20.0),
+                    margin: EdgeInsets.all(20.0),
                     decoration: BoxDecoration(
                       color: Color.fromARGB(255, 177, 177, 177),
                       border: Border.all(color: Colors.white,width: 4),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        PokemonAtributes('ATK',pokemon.attack.toString()),
-                        PokemonAtributes('SPD',pokemon.speed.toString()),
-                        PokemonAtributes('HP',pokemon.life.toString()),
-                        PokemonAtributes('DEF',pokemon.defense.toString()),
-                        PokemonAtributes('ELE',pokemon.element),
+                        PokemonAtributes('ATK: ',pokemon.attack.toString(),Image.asset('images/ataque.png'),Colors.white),
+                        PokemonAtributes('SPD: ',pokemon.speed.toString(),Image.asset('images/velocidade.png'),Colors.white),
+                        PokemonAtributes('HP: ',pokemon.life.toString(),Image.asset('images/vida.png'),Colors.white),
+                        PokemonAtributes('DEF: ',pokemon.defense.toString(),Image.asset('images/defesa.png'),Colors.white),
+                        PokemonAtributes('ELE: ',pokemon.element.toUpperCase(),Image.asset('images/elemento.png'),Colors.white),
                       ],
                     ),
                   )
                 ],
               ),
             ),
-            PokemonAtributes("Fraquezas:", pokemon.weakness.toString()),
           ],
 
         ),

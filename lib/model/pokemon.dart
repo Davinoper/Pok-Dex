@@ -1,15 +1,14 @@
 class Pokemon{
-  int id;
+  var id;
   String nome;
-  double attack;
-  double speed;
-  double life;
-  double defense;
+  var attack;
+  var speed;
+  var life;
+  var defense;
   String element;
   String imageUrl;
-  List<String> weakness;
 
-  Pokemon(int id, String nome, double attack, double speed, double life, double defense, String element, String imageUrl, List<String>? weakness):
+  Pokemon(var id, String nome, var attack, var speed, var life, var defense, String element, String imageUrl):
     this.id =id,
     this.nome = nome,
     this.attack = attack,
@@ -17,13 +16,7 @@ class Pokemon{
     this.life = life,
     this.defense = defense,
     this.element = element,
-    this.imageUrl = imageUrl ?? " ",
-    this.weakness = weakness ?? [];
-
-
-
-
-
+    this.imageUrl = imageUrl;
 }
 
 

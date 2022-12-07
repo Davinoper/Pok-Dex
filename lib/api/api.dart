@@ -7,4 +7,3 @@ Future<Map> fetch(url) async{
   var json = jsonDecode(response.body);
   return json ;
 }
-

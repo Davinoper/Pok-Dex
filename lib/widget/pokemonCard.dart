@@ -67,10 +67,14 @@ class PokemonCard extends StatelessWidget{
               ),
               child: Image.network(pokemon.imageUrl, fit: BoxFit.fitHeight),
             ),
+           Padding(padding: EdgeInsets.all(10.0)),
            Column(
+             mainAxisAlignment: MainAxisAlignment.spaceAround,
              children: [
-               PokemonAtributes("Elemento", pokemon.element),
-               PokemonAtributes("Ataque", pokemon.attack.toString()),
+               PokemonAtributes("ATK: ", pokemon.attack.toString(),Image.asset('images/ataque.png'),Colors.black38),
+               Padding(padding: EdgeInsets.all(5.0)),
+               PokemonAtributes("ELE: ", pokemon.element.toUpperCase(),Image.asset('images/elemento.png'),Colors.black38),
+
 
              ],
            ),
