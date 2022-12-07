@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:pokedex/model/pokemon.dart';
+import 'package:pokedex/view/search.dart';
 import 'package:pokedex/widget/pokemonCard.dart';
 import 'package:pokedex/controller/controller.dart';
 class Showcase extends StatefulWidget {
@@ -34,6 +35,10 @@ class _ShowcaseState extends State<Showcase> {
         title: Container(width:100,height:100,child: Image.asset('images/pokedex.png')),
         backgroundColor:Color.fromARGB(233, 233, 233, 141),
         shadowColor: Colors.orangeAccent,
+        actions:[ IconButton(onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder:
+              (context) => Search(this.listaPokemons)));
+        }, icon: Icon(Icons.search),),]
       ),
       backgroundColor: Color.fromARGB(233, 233, 233, 141),
       body: ListView.separated(
